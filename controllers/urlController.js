@@ -72,3 +72,16 @@ exports.deleteShortUrl = async (req, res) => {
     }
 };
 
+// Get URL statistics
+exports.getUrlStats = async (req, res) => {
+    const { shortCode } = req.params;
+    try {
+        const urlDoc = await Url.findOne({ shortCode });
+        if (!urlDoc) {
+            return res.status(404).json({ error: 'Short URL not found' });
+        }
+        res.status(200).json(urlDoc);
+    } catch (error) {
+        res.status(500).json({ error: 'Server error' });
+    }
+};
