@@ -30,7 +30,6 @@ url-shortener/
 ├── controllers/        # API logic
 ├── models/             # URL schema
 ├── routes/             # API routes
-├── data/               # Sample API requests
-├── .env        # Environment variable template
+├── .env                # Environment variable template
 ├── server.js           # MongoDB connection and Entry point
 └── README.md           # Documentation
